@@ -1,0 +1,102 @@
+// @import './environment.scss';
+
+#section__trade-fair {
+  padding-top: 60rem;
+  padding-bottom: 60rem;
+
+  .heading {
+    margin-bottom: 31rem;
+  }
+
+  ul.nav {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 47rem;
+
+    li.nav-tabs {
+      font-family: $content-font;
+      font-weight: 700;
+      font-size: 24rem;
+      color: $grey-color;
+      border: none;
+      margin-left: 25rem;
+      margin-right: 25rem;
+
+      .nav-link {
+        border: none;
+        outline: unset;
+        color: inherit;
+
+        &.active {
+          background-color: unset;
+          color: $brick-color;
+        }
+      }
+    }
+  }
+
+  #trade-fair-tab {
+    // .__container {
+    //   --bs-gutter-y: 24rem;
+    //   --bs-gutter-x: 24rem;
+
+    //   img {
+    //     width: 100%;
+    //     height: 100%;
+    //     max-height: 45vh;
+    //     object-fit: cover;
+    //   }
+    // }
+
+    .carousel-inner {
+
+      img {
+        width: 90%;
+        height: 80vh;
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      position: absolute !important;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  #section__trade-fair {
+    padding: 30rem 0 30rem;
+
+    .heading {
+      margin-bottom: 24rem;
+    }
+
+    ul.nav {
+      margin-bottom: 22rem;
+
+      li.nav-tabs {
+        font-size: 14rem;
+        margin-left: 18rem;
+        margin-right: 18rem;
+      }
+    }
+
+    #trade-fair-tab {
+
+      .carousel-inner {
+
+        img {
+          width: 100%;
+          height: 40vh;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

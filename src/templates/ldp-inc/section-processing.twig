@@ -1,0 +1,42 @@
+<section id="section__processing">
+	<h3 class="heading reveal-up-first">Organic Processing</h3>
+	<div class="carousel slide d-sm-flex" data-bs-ride="carousel" id="processing-carousel" data-bs-interval="false">
+		<ol class="carousel-indicators d-sm-none reveal-up-first">
+			{% for item in post.meta('organic_processing') %}
+				{% set appendIndicatorActiveClass %}
+				{% if loop.first %}active
+				{% endif %}
+				{% endset %}
+				<li data-bs-target="#processing-carousel" data-bs-slide-to="{{ loop.index0 }}" class="{{ appendIndicatorActiveClass }}"></li>
+			{% endfor %}
+		</ol>
+		<div class="col-sm-8 reveal-up-first">
+			<div class="carousel-inner">
+				{% for item in post.meta('organic_processing') %}
+					{% set appendProcessActiveClass %}
+					{% if loop.first %}active
+					{% endif %}
+					{% endset %}
+					<div class="carousel-item {{ appendProcessActiveClass }}">
+						<img class="__image" src="{{ item.image }}" alt="Slide Image">
+						<div class="__content">
+							<div class="background-filter"></div>
+							<h4 class="__title">{{ item.name }}</h4>
+							<p class="__description">{{ item.description }}<br></p>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="col-sm-1 d-none d-sm-flex flex-column justify-content-center reveal-up-delay">
+			<a class="carousel-control-next" href="#processing-carousel" role="button" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</a>
+			<a class="carousel-control-prev" href="#processing-carousel" role="button" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</a>
+		</div>
+	</div>
+</section>

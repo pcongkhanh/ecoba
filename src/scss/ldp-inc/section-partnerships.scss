@@ -1,0 +1,48 @@
+// @import './environment.scss';
+
+#section__partnerships {
+  padding-top: 60rem;
+  padding-bottom: 60rem;
+
+  .heading {
+    text-align: left;
+    margin-bottom: 60rem;
+  }
+
+  .__logos {
+    padding-top: 120rem;
+  }
+
+  .__logo {
+    --bs-gutter-y: 60rem;
+    --bs-gutter-x: 60rem;
+    align-items: center;
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 140rem;
+    object-fit: contain;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  #section__partnerships {
+    padding-top: 30rem;
+    padding-bottom: 30rem;
+    
+    .heading {
+      text-align: left;
+      margin-bottom: 12rem;
+    }
+
+    .__description {
+      margin-bottom: 60rem;
+    }
+
+    .__logo {
+      --bs-gutter-x: 44rem;
+      --bs-gutter-y: 44rem;
+    }
+  }
+}

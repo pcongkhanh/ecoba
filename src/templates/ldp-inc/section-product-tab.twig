@@ -1,0 +1,65 @@
+<section id="section__products-tab">
+	<h3 class="heading reveal-up-first">Our products</h3>
+
+	<ul class="nav" role="tablist">
+		{% for item in post.meta('products_tab') %}
+			{% set appendActiveClass %}
+			{% if loop.first %}active
+			{% endif %}
+			{% endset %}
+			{% set appendSelected %}
+			{% if loop.first %}true
+				{% else %}false
+			{% endif %}
+			{% endset %}
+
+			<li class="nav-item nav-tabs" role="presentation">
+				<a class="nav-link {{ appendActiveClass  }} reveal-sequence" data-bs-toggle="tab" href="#products-tab__{{ loop.index }}" role="tab" aria-controls="products-tab__{{ loop.index }}" aria-selected="{{ appendSelected }}">
+					{{ item.name }}
+				</a>
+			</li>
+		{% endfor %}
+	</ul>
+
+	<div class="tab-content" id="products-tab">
+		{% for item in post.meta('products_tab') %}
+			{% set appendClass %}
+			{% if loop.first %}show active
+			{% endif %}
+			{% endset %}
+			<div class="tab-pane fade {{ appendClass }}" id="products-tab__{{ loop.index }}" role="tabpanel" aria-labelledby="products-tab__{{ loop.index }}">
+				<div class="d-sm-flex align-items-stretch">
+					<div
+						class="__image-box col-sm-6 col-md-8 position-relative">
+						{# <img class="__image slideUp-re-reveal" src={{ item.image }}/> #}
+						<img class="__image reveal-fade recall-reveal" src="{{ Image(item.image).src }}"/>
+					</div>
+					<div class="__content col-sm-6 col-md-4">
+						<p class="__title reveal-up-first recall-reveal">{{ item.name }}</p>
+						<p class="__description reveal-up-delay recall-reveal">{{ item.description }}</p>
+						<div class="container-collapse reveal-up-delay recall-reveal">
+							<div class="collapse-btn __header" data-bs-toggle="collapse" aria-expanded="false" aria-controls="product__no{{ loop.index }}__collapse" href="#product__no{{ loop.index }}__collapse" role="button">
+								<span>Details</span>
+								<i class="plus-toggle bi bi-plus"></i>
+							</div>
+							{# {{ dump(detailName) }} #}
+							{# {{ detailName | json_encode(constant('JSON_PRETTY_PRINT')) }} #}
+							<div class="__body collapse" id="product__no{{ loop.index }}__collapse">
+								{% for ite in item.detail %}
+									<div class="row">
+										<div class="col">
+											<p>{{ detailName[loop.index0] }}</p>
+										</div>
+										<div class="col">
+											<p>{{ ite }}</p>
+										</div>
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</section>

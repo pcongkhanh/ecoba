@@ -1,0 +1,53 @@
+// @import './environment.scss';
+
+#section__certificates {
+  padding-top: 120rem;
+  padding-bottom: 120rem;
+
+  .heading {
+    margin-bottom: 24rem;
+  }
+
+  .__description {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 68rem;
+    letter-spacing: 0.02em;
+  }
+
+  .__container {
+    padding-left: 10%;
+    padding-right: 10%;
+
+    a img {
+      height: 110rem;
+      width: auto;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  #section__certificates {
+    padding-top: 60rem;
+    padding-bottom: 60rem;
+
+    .heading {
+      margin-bottom: 12rem;
+    }
+
+    .__description {
+      width: 100%;
+      margin-bottom: 40rem;
+    }
+
+    .__container {
+      padding: 0;
+
+      a img {
+        height: 50rem;
+        width: auto;
+      }
+    }
+  }
+}

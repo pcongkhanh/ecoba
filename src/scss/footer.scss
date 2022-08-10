@@ -1,0 +1,204 @@
+// @import './environment.scss';
+
+#above-footer {
+  color: $white-color;
+  background: $brick-color;
+  padding-top: 100rem;
+  padding-bottom: 100rem;
+
+  .__container-office {
+    --bs-gutter-x: 100rem;
+    --bs-gutter-y: 125rem;
+
+    .office {
+      .__title {
+        font-size: 32rem;
+        margin-bottom: 16rem;
+      }
+
+      .__info {
+        margin-bottom: 12rem;
+      }
+    }
+  }
+
+  .__container-contact {
+    background-color: $white-color;
+    color: $black-color;
+    position: relative;
+    min-height: 300rem;
+
+    .thankyou-letter {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $white-color;
+      z-index: 10;
+
+      .thankyou-text {
+        font-family: $heading-font;
+        font-weight: 500;
+        font-size: 56rem;
+        margin-bottom: 8rem;
+      }
+
+      .thankyou-sub-text {
+        font-size: 16rem;
+      }
+    }
+
+    form {
+      padding: 60rem 70rem;
+
+      .heading {
+        color: $brick-color;
+        font-size: 40rem;
+        margin-bottom: 24rem;
+        text-align: left;
+      }
+
+      .form-group {
+        margin-bottom: 40rem;
+
+        .form-label {
+          font-size: 14rem;
+          font-weight: bold;
+          margin-bottom: 13rem;
+        }
+
+        .form-control {
+          border: 0;
+          border-bottom: 2px solid $grey-color;
+          font-size: 16rem;
+          padding-bottom: 11rem;
+          background-color: transparent;
+
+          &:focus {
+            background-color: transparent;
+            box-shadow: none;
+            border-color: $black-color;
+          }
+        }
+
+        input.form-control {
+          height: 30rem;
+        }
+
+        textarea.form-control {
+          height: 108rem;
+        }
+      }
+
+      .submit-button {
+        font-family: $heading-font;
+        font-size: 20rem;
+        color: $white-color;
+        background-color: $brick-color;
+        padding: 12rem 24rem;
+        margin-top: 12rem;
+        border-radius: 2rem;
+
+        &:active {
+          background-color: #621C1E;
+        }
+      }
+
+      span.ajax-loader {
+        display: none !important;
+      }
+    }
+  }
+}
+
+
+#copy-right-text {
+  font-family: $heading-font;
+  height: 40rem;
+  font-size: 16rem;
+  color: $white-color;
+  background-color: $black-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@include media-breakpoint-down(sm) {
+  #above-footer {
+    color: $white-color;
+    background: $brick-color;
+    padding: 30rem 16rem 60rem;
+
+    .__container-office {
+      --bs-gutter-x: 0;
+      --bs-gutter-y: 40rem;
+      margin-bottom: 35rem;
+
+      .office {
+        .__title {
+          font-size: 32rem;
+          margin-bottom: 16rem;
+        }
+
+        .__info {
+          margin-bottom: 12rem;
+        }
+      }
+    }
+
+    .__container-contact {
+
+      .thankyou-letter {
+        .thankyou-text {
+          font-family: $heading-font;
+          font-weight: 500;
+          font-size: 40rem;
+          margin-bottom: 6rem;
+        }
+
+        .thankyou-sub-text {
+          font-size: 12rem;
+        }
+      }
+
+      form {
+        padding: 32rem 20rem 25rem;
+
+        .heading {
+          font-size: 32rem;
+          text-align: center;
+        }
+
+        .form-group {
+
+          .form-label {
+            font-size: 12rem;
+            margin-bottom: 8rem;
+          }
+
+          .form-control {
+            border-width: 1rem;
+            font-size: 10rem;
+            padding-bottom: 11rem;
+          }
+
+          input.form-control {
+            height: 20rem;
+          }
+        }
+
+        .submit-button {
+          font-size: 16rem;
+          padding: 12rem 24rem;
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  #copy-right-text {
+    height: 30rem;
+    font-size: 12rem;
+  }
+}

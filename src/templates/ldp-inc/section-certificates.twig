@@ -1,0 +1,14 @@
+<section id="section__certificates">
+	<h3 class="heading reveal-up-first">Certificates</h3>
+	<p class="text-center __description reveal-up-delay">{{ post.meta('certificate').text }}</p>
+	<div class="__container row justify-content-center">
+		{% for item in post.meta('certificate').items %}
+			<div class="col d-flex justify-content-center">
+				<a data-bs-toggle="modal" href="#certificate__no-{{ loop.index }}">
+					<img class="reveal-sequence cert-image" src="{{ item.logo }}" 
+					data-bs-toggle="tooltip" data-bs-placement="top" title="Click to see full certificate" data-bs-customClass="tooltip" data-bs-trigger="manual">
+				</a>
+			</div>
+		{% endfor %}
+	</div>
+</section>

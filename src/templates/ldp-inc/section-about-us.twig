@@ -1,0 +1,59 @@
+<section id="section__about-us">
+	<div class="carousel slide" data-bs-ride="carousel" id="carousel-2" data-bs-interval="false">
+		<ol class="carousel-indicators d-sm-none">
+			{% for item in post.meta('about_slider') %}
+				{% set appendIndicatorActiveClass %}
+				{% if loop.first %}active
+				{% endif %}
+				{% endset %}
+				<li data-bs-target="#trade-fair-carousel{{ tabIndex }}" data-bs-slide-to="{{ loop.index0 }}" class="{{ appendIndicatorActiveClass }}"></li>
+			{% endfor %}
+		</ol>
+		<div class="carousel-inner reveal-up-first">
+			{% for item in post.meta('about_slider') %}
+				{% set appendActiveClass %}
+				{% if loop.first %}active
+				{% endif %}
+				{% endset %}
+				<div class="carousel-item {{ appendActiveClass }}">
+					<div class="row justify-content-between">
+						<div class="col-12 col-sm-6 __image-box">
+							<img class="__image reveal-fade recall-reveal" src="{{ Image(item.image) }}" alt="Slide Image">
+						</div>
+						<div class="col-6 d-none d-sm-block">
+							<h4 class="__title col-12 reveal-fade recall-reveal">{{ item.name }}</h4>
+							<div class="__description col-12 reveal-fade recall-reveal">{{ item.description }}</div>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+		<div class="div-button-carousel d-none d-sm-flex reveal-fade">
+			<a class="carousel-control-prev" href="#carousel-2" role="button" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon"></span>
+				<span class="visually-hidden">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#carousel-2" role="button" data-bs-slide="next">
+				<span class="carousel-control-next-icon"></span>
+				<span class="visually-hidden">Next</span>
+			</a>
+		</div>
+	</div>
+
+	<div class="carousel slide d-block d-sm-none" data-bs-ride="carousel" id="carousel-2-2" data-bs-interval="false">
+		<div class="carousel-inner reveal-up-first">
+			{% for item in post.meta('about_slider') %}
+				{% set appendActiveClass %}
+				{% if loop.first %}active
+				{% endif %}
+				{% endset %}
+				<div class="carousel-item {{ appendActiveClass }}">
+					<div class="col-12 col-sm-6">
+						<h4 class="__title col-12 reveal-fade recall-reveal">{{ item.name }}</h4>
+						<div class="__description col-12 d-flex flex-wrap justify-content-between reveal-fade recall-reveal">{{ item.description }}</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>

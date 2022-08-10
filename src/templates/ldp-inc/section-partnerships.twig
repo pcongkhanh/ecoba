@@ -1,0 +1,17 @@
+<section id="section__partnerships">
+	<div class="d-sm-flex justify-content-around">
+		<div class="col-sm-4">
+			<h3 class="heading reveal-up-first">Partnerships</h3>
+			<p class="__description reveal-up-delay">{{ post.meta('partnerships').text }}</p>
+		</div>
+		<div class="col-sm-6 __logos">
+			<div class="__logo row row-cols-2">
+				{% for item in post.meta('partnerships').logo %}
+					<div class="col d-flex justify-content-center align-items-baseline">
+						<img class="reveal-sequence" src={{ Image(item) }}>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</section>

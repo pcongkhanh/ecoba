@@ -1,0 +1,33 @@
+<section id="section__faq">
+	<h3 class="heading reveal-up-first">FAQ</h3>
+	<div class="row justify-content-between">
+		<div class="col-12 col-sm-5 left reveal-up-first">
+			{% for item in post.meta('faq')[: (post.meta('faq')|length / 2)|round(0, 'ceil')]%}
+				{% set appendLastClass %}
+					{% if loop.last %}last{% endif %}
+				{% endset %}
+				<div class="collapse-btn {{ appendLastClass }}" data-bs-toggle="collapse" aria-expanded="false" aria-controls="faq__no{{ loop.index }}" href="#faq__no{{ loop.index }}" role="button">
+					<p class="__questtion">{{ item.questtion }}</p>
+					<i class="plus-toggle bi bi-plus col-auto"></i>
+				</div>
+				<div class="collapse {{ appendLastClass }}" id="faq__no{{ loop.index }}"  data-bs-parent="#section__faq">
+					<div class="__answer">{{ item.answer }}</div>
+				</div>
+			{% endfor %}
+		</div>
+		<div class="col-12 col-sm-5 right reveal-up-delay">
+			{% for item in post.meta('faq')[(post.meta('faq')|length / 2)|round(0, 'ceil') :] %}
+				{% set appendLastClass %}
+					{% if loop.last %}last{% endif %}
+				{% endset %}
+				<div class="collapse-btn {{ appendLastClass }}" data-bs-toggle="collapse" aria-expanded="false" aria-controls="faq__no{{ loop.index + (post.meta('faq')|length / 2)|round(0, 'ceil') }}" href="#faq__no{{ loop.index +(post.meta('faq')|length / 2)|round(0, 'ceil') }}" role="button">
+					<p class="__questtion">{{ item.questtion }}</p>
+					<i class="plus-toggle bi bi-plus col-auto"></i>
+				</div>
+				<div class="collapse {{ appendLastClass }}" id="faq__no{{ loop.index +(post.meta('faq')|length / 2)|round(0, 'ceil') }}"  data-bs-parent="#section__faq">
+					<div class="__answer">{{ item.answer }}</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>

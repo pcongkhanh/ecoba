@@ -1,0 +1,9 @@
+<section id="section__hero-video" class="w-100 position-relative">
+	{# <a href="#contact" class="position-absolute" id="contact-cta">
+		<img src="{{ site.link }}/wp-content/uploads/2021/02/contact-button.svg"/>
+	</a> #}
+	<video autoplay muted playsinline id="intro-video" poster="{{ site.url }}/wp-content/uploads/2021/03/videoThumbnail-compressed.jpg" onclick="this.paused ? this.play() : this.pause();">
+		<source src="{{ post.meta('hero_video') }}" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+</section>

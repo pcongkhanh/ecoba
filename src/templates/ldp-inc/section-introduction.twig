@@ -1,0 +1,32 @@
+<section id="section__introduction">
+	<div id="heading-wrapper">
+		<h3 class="heading reveal-up-first">Rice Fields Introduction</h3>
+	</div>
+	<div id="divider-wrapper" class="d-none d-sm-block"></div>
+	{% for item in post.meta('rice_fields_introduction') %}
+		{% set appendReverseClass %}
+		{% if loop.index is even %}flex-column-reverse flex-sm-row-reverse
+			{% else %}flex-column-reverse flex-sm-row
+		{% endif %}
+		{% endset %}
+		{% set appendAlignTextClass %}
+		{% if loop.index is odd %}text-sm-end
+		{% endif %}
+		{% endset %}
+
+
+		<div class="__container d-flex {{ appendReverseClass }}">
+			<div class="col-sm-4 d-flex flex-column justify-content-center">
+				<h4 class="__title {{ appendAlignTextClass }} reveal-up-first">
+					<span class="__order-number">{{ "%02d"|format(loop.index) }}</span>
+					{{ item.name }}
+				</h4>
+				<p class="__description {{ appendAlignTextClass }} reveal-up-delay">{{ item.description }}</p>
+			</div>
+			<div class="col-sm-2"></div>
+			<div class="col-sm-4 d-flex justify-content-center align-items-baseline">
+				<img class="__image reveal-up-delay" src="{{ item.image }}">
+			</div>
+		</div>
+	{% endfor %}
+</section>

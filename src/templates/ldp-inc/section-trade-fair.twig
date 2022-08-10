@@ -1,0 +1,83 @@
+<section id="section__trade-fair">
+	<h3 class="heading reveal-up-first">Trade Fair</h3>
+
+	<ul class="nav" role="tablist">
+		{% for item in post.meta('trade_fair') %}
+			{% set appendActiveClass %}
+			{% if loop.first %}active
+			{% endif %}
+			{% endset %}
+			{% set appendSelectedClass %}
+			{% if loop.first %}true
+				{% else %}false
+			{% endif %}
+			{% endset %}
+
+			<li class="nav-item nav-tabs" role="presentation">
+				<a class="nav-link {{ appendActiveClass  }} reveal-sequence recall-reveal" data-bs-toggle="tab" href="#trade-fair-tab__{{ loop.index }}" role="tab" aria-controls="trade-fair-tab__{{ loop.index }}" aria-selected="{{ appendSelected }}">
+					{{ item.name }}
+				</a>
+			</li>
+		{% endfor %}
+	</ul>
+
+	<div class="tab-content" id="trade-fair-tab">
+		{% for item in post.meta('trade_fair') %}
+			{% set appendClass %}
+			{% if loop.first %}show active
+			{% endif %}
+			{% endset %}
+			<div
+				class="tab-pane fade {{ appendClass }}" id="trade-fair-tab__{{ loop.index }}" role="tabpanel" aria-labelledby="trade-fair-tab__{{ loop.index }}">
+				{# <div class="__container d-none d-sm-flex row">
+													{% for ite in item.gallery %}
+														{% set appendColClass %}
+														{% if ((loop.index0 // 2) % 2 == 0 and loop.index is odd) 
+																		or ((loop.index0 // 2) % 2 == 1 and (loop.index) is even) %}col-5
+															{% else %}col-7
+														{% endif %}
+														{% endset %}
+								
+														<div class="{{ appendColClass }}">
+															<img class="__image reveal-sequence recall-reveal" src="{{ Image(ite) }}">
+														</div>
+													{% endfor %}
+												</div> #}
+
+				{% set tabIndex = loop.index %}
+				<div class="carousel slide reveal-fade" data-bs-ride="carousel" id="trade-fair-carousel{{ tabIndex }}" data-bs-interval="false">
+					<ol class="carousel-indicators d-sm-none">
+						{% for ite in item.gallery %}
+							{% set appendIndicatorActiveClass %}
+							{% if loop.first %}active
+							{% endif %}
+							{% endset %}
+							<li data-bs-target="#trade-fair-carousel{{ tabIndex }}" data-bs-slide-to="{{ loop.index0 }}" class="{{ appendIndicatorActiveClass }}"></li>
+						{% endfor %}
+					</ol>
+
+					<div class="carousel-inner">
+						{% for ite in item.gallery %}
+							{% set appendActiveClass %}
+							{% if loop.first %}active
+							{% endif %}
+							{% endset %}
+							<div class="carousel-item {{ appendActiveClass }}">
+								<img class="__image" src="{{ Image(ite) }}" alt="Slide Image">
+							</div>
+						{% endfor %}
+					</div>
+
+					<a class="carousel-control-prev d-none d-sm-block" href="#trade-fair-carousel{{ tabIndex }}" role="button" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</a>
+					<a class="carousel-control-next d-none d-sm-block" href="#trade-fair-carousel{{ tabIndex }}" role="button" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</a>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</section>

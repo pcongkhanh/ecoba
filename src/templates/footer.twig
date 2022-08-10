@@ -1,0 +1,25 @@
+<section id="above-footer">
+	<div class="row align-items-center justify-content-between">
+		<div class="col-12 col-sm-6">
+			<div class="__container-office row row-cols-1 row-cols-sm-2">
+				{% for item in post.meta('addresses') %}
+					<div class="col office">
+						<h4 class="__title reveal-up-first">{{ item.title }}</h4>
+						<div class="__info reveal-up-delay">{{ item.info }}</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="col-12 col-sm-5 __container-contact reveal-fade" id="contact">
+			{{ function('do_shortcode', '[contact-form-7 id="289" title="Contact Form"]') }}
+			<div class="d-none flex-column justify-content-center align-items-center thankyou-letter">
+				<p class="thankyou-text">Thank you!</p>
+				<p class="thankyou-sub-text">We will contact you shortly.</p>
+			</div>
+		</div>
+	</div>
+
+</section>
+<div id="copy-right-text">
+	Copyright ©{{ "now"|date('Y') }}
+	Lotus Rice Co., LTD. All right reserved.</div>

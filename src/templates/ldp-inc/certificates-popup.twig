@@ -1,0 +1,10 @@
+{% for item in post.meta('certificate').items %}
+	<div class="modal fade certificate-popup" id="certificate__no-{{ loop.index }}" tabindex="-1" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+			<div class="modal-content">
+				<button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="modal"></button>
+				<img class="w-100 h-auto" src="{{ item.detail }}">
+			</div>
+		</div>
+	</div>
+{% endfor %}

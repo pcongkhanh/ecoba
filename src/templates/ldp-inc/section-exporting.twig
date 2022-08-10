@@ -1,0 +1,22 @@
+<section id="section__exporting">
+	<h3 class="heading reveal-up-first">Exporting Countries</h3>
+	<p class="__description mx-auto reveal-up-delay">{{ post.meta('exporting_countries').text }}</p>
+	<div class="reveal-fade" id="map">
+		<img class="__image d-none d-md-block" src={{ post.meta('exporting_countries').image_desktop }}>
+		<img class="__image d-md-none" src={{ post.meta('exporting_countries').image_mobile }}>
+        {# <object type="image/svg+xml" data="{{ site.link }}/wp-content/uploads/2022/06/world.svg"></object> #}
+	</div>
+	<div class="d-md-none row row-cols-3" id="country-list">
+		<div class="col reveal-sequence">North America</div>
+		<div class="col reveal-sequence">Netherlands</div>
+		<div class="col reveal-sequence">Belgium</div>
+		<div class="col reveal-sequence">Czech Republic</div>
+		<div class="col reveal-sequence">Spain</div>
+		<div class="col reveal-sequence">Bulgaria</div>
+		<div class="col reveal-sequence">Israel</div>
+		<div class="col reveal-sequence">Kuwait</div>
+		<div class="col reveal-sequence">Saudi Arabia</div>
+		<div class="col reveal-sequence">UAE</div>
+		<div class="col reveal-sequence">Singapore</div>
+	</div>
+</section>

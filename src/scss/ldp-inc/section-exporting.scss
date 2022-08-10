@@ -1,0 +1,115 @@
+// @import './environment.scss';
+
+#section__exporting {
+  padding-top: 60rem;
+  padding-bottom: 60rem;
+
+  .heading {
+    margin-bottom: 24rem;
+  }
+
+  .__image {
+    width: 100%;
+    height: auto;
+  }
+
+  .__description {
+    width: 66.667%;
+    margin-bottom: 70rem;
+  }
+
+  svg {
+    max-width: 100% !important;
+    height: auto;
+    display: block;
+  }
+
+  .heyo:hover {
+    fill: #7F2629;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+
+  .enabled {
+    fill: #7F2629;
+    cursor: pointer;
+  }
+
+  .description {
+    pointer-events: none;
+    position: absolute;
+    font-family: $heading-font;
+    font-size: 24px;
+    text-align: center;
+    background: white;
+    padding: 22px 38px;
+    z-index: 5;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 auto;
+    color: #7F2629;
+    display: none;
+
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+
+    &.active {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 100%;
+      width: 0;
+      height: 0;
+      border-left: 0px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 10px solid white;
+    }
+  }
+
+  #country-list {
+    font-family: $heading-font;
+    font-size: 16rem;
+    color: $brick-color;
+    --bs-gutter-x: 60rem;
+    --bs-gutter-y: 24rem;
+    white-space: nowrap;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  #section__exporting {
+    padding-top: 30rem;
+    padding-bottom: 30rem;
+
+    .__description {
+      width: 100%;
+      margin-bottom: 24rem;
+    }
+
+    #map {
+      width: 100vw;
+      margin-left: -16rem;
+
+      .__image {
+        margin-bottom: 60rem;
+      }
+
+      svg {
+        max-width: unset !important;
+        width: 130%;
+        margin-left: -10%;
+        margin-bottom: 36rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+// @import './environment.scss';
+
+#section__hero-video {
+  padding: 0;
+  background-color: $black-color;
+
+  video {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center bottom;
+    cursor: pointer;
+  }
+
+  // #contact-cta {
+  //   width: 60rem;
+  //   bottom: 80rem;
+  //   right: 60rem;
+  //   z-index: 10;
+
+  //   img {
+  //     width: 100%;
+  //     object-fit: cover;
+  //     box-shadow: 0 12rem 30rem 0 #7F262940;
+  //     border-radius: 100%;
+  //   }
+  // }
+}
+
+@include media-breakpoint-down(sm) {
+  #section__hero-video {
+
+    video {
+      height: auto;
+    }
+
+    // #contact-cta {
+    //   display: none;
+    // }
+  }
+}
+
+@media screen and (min-width:768px) and (max-width:1024px) and (orientation:portrait) {
+  #section__hero-video {
+
+    video {
+      height: auto;
+    }
+
+    // #contact-cta {
+    //   display: none;
+    // }
+  }
+}

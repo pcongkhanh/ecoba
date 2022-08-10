@@ -1,0 +1,59 @@
+<section id="section__factory">
+	<h3 class="heading reveal-up-first">Factory</h3>
+	<div class="__container row d-none d-sm-flex">
+		{% for item in post.meta('factory') %}
+			{% set appendColClass %}
+			{% if ((loop.index0 // 2) % 2 == 0 and loop.index is odd) 
+								or ((loop.index0 // 2) % 2 == 1 and (loop.index) is even) %}col-5
+				{% else %}col-7
+			{% endif %}
+			{% endset %}
+
+			<div class="{{ appendColClass }} position-relative reveal-sequence">
+				<div class="__gradient"></div>
+				<img src="{{ item.image }}">
+				<p class="__description reveal-up-delay">{{ item.description }}</p>
+			</div>
+		{% endfor %}
+	</div>
+
+	{# <div class="carousel slide d-sm-none reveal-fade" data-ride="carousel" id="factory-carousel" data-interval="false">
+			<ol class="carousel-indicators d-sm-none">
+				{% for item in post.meta('factory') %}
+					{% set appendIndicatorActiveClass %}
+					{% if loop.first %}active
+					{% endif %}
+					{% endset %}
+					<li data-target="#factory-carousel" data-slide-to="{{ loop.index0 }}" class="{{ appendIndicatorActiveClass }}"></li>
+				{% endfor %}
+			</ol>
+	
+			<div class="carousel-inner">
+				{% for item in post.meta('factory') %}
+					{% set appendActiveClass %}
+					{% if loop.first %}active
+					{% endif %}
+					{% endset %}
+					<div class="carousel-item {{ appendActiveClass }}">
+						<div class="__gradient"></div>
+						<img class="__image" src="{{ Image(item.image) }}">
+						<p class="__description">{{ item.description }}</p>
+					</div>
+				{% endfor %}
+			</div>
+		</div> #}
+
+	<div class="slick-center d-block d-sm-none">
+		{% for item in post.meta('factory') %}
+			{% set appendActiveClass %}
+			{% if loop.first %}active
+			{% endif %}
+			{% endset %}
+			<div class="slick-item {{ appendActiveClass }}">
+				<div class="__gradient"></div>
+				<img class="__image" src="{{ Image(item.image) }}">
+				<p class="__description">{{ item.description }}</p>
+			</div>
+		{% endfor %}
+	</div>
+</section>

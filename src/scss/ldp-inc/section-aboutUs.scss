@@ -1,0 +1,77 @@
+// @import './environment.scss';
+
+#section__about-us {
+  padding-left: 0;
+  padding-top: 60rem;
+  padding-bottom: 120rem;
+
+  .__title {
+    font-family: $heading-font;
+    font-size: 70rem;
+    color: $brick-color;
+    margin-bottom: 24rem;
+  }
+
+  .__description p {
+    font-size: 20rem;
+    margin-bottom: 12rem;
+
+    br {
+      margin: 6rem;
+    }
+  }
+
+  .carousel-item {
+    .row {
+      --bs-gutter-x: 24rem;
+    }
+  }
+
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    max-height: 90vh;
+    object-fit: cover;
+  }
+
+  .div-button-carousel {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 41.667%;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  #section__about-us {
+    padding: 30rem 16rem 60rem;
+
+    .__title {
+      font-size: 24rem;
+    }
+
+    .__description p {
+      font-size: 12rem;
+    }
+
+    .carousel-item {
+      .__image-box {
+        .__image {
+          max-height: 50vh;
+        }
+      }
+    }
+
+    #carousel-2-2 {
+      margin-top: 48rem;
+
+      .__description {
+
+        p:not(:last-child),
+        p ~ p {
+          width: calc(50% - 8rem);
+        }
+      }
+    }
+  }
+}

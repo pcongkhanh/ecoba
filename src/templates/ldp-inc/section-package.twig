@@ -1,0 +1,13 @@
+<section id="section__package">
+	<h3 class="heading reveal-up-first">Package</h3>
+	<p class="__description text-center mx-auto reveal-up-delay">{{ post.meta('package').text }}</p>
+	<div class="__container row row-cols-2 row-cols-sm-3 col-10 col-sm-12 mx-auto">
+		{% for item in post.meta('package').info %}
+			<div class="__item col">
+				<img class="__image reveal-up-first" src="{{ item.image }}">
+				<p class="__description-text text-center reveal-up-delay text-uppercase fw-bold">{{ item.description }}</p>
+				<p class="__detail text-center reveal-up-delay">{{ item.properties }}</p>
+			</div>
+		{% endfor %}
+	</div>
+</section>

@@ -1,0 +1,23 @@
+// custom variable
+$enable-reduced-motion: false;
+
+$tooltip-font-size:                 12rem;
+$tooltip-max-width:                 200rem;
+$tooltip-color:                     #fcf9f1;
+$tooltip-bg:                        #151515;
+$tooltip-border-radius:             5rem;
+$tooltip-opacity:                   .9;
+$tooltip-padding-y:                 5rem;
+$tooltip-padding-x:                 10rem;
+$tooltip-margin:                    0;
+
+$tooltip-arrow-width:               10rem;
+$tooltip-arrow-height:              5rem;
+$tooltip-arrow-color:               $tooltip-bg;
+
+@import "bootstrap";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+@import url("//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css");
+
+// Your styles here
+@import './landing-page.scss';

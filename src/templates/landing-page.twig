@@ -1,0 +1,63 @@
+	{% block html_head_container %}
+		{% include 'html-header.twig' %}
+	</head>
+	{% endblock %}
+	<body class="{{body_class}}" data-template="base.twig">
+		<a href="#" id="back-to-top">
+			<i class="bi bi-arrow-up-circle-fill"></i>
+		</a>
+
+		<a href="#contact" id="contact-cta">
+			<i class="bi bi-envelope-fill"></i>
+		</a>
+		
+		{% block header %}
+			{% include "header.twig" %}
+		{% endblock %}
+
+		{% include 'ldp-inc/pre-loading.twig' %}
+		{% include 'ldp-inc/menu-popup.twig' %}
+		{% include 'ldp-inc/certificates-popup.twig' %}
+
+		{% block body %}
+			{% include 'ldp-inc/section-video.twig' %}
+			{% include 'ldp-inc/section-product-tab.twig' %}
+			{% include 'ldp-inc/section-certificates.twig' %}
+			{% include 'ldp-inc/section-quote.twig' %}
+			{% include 'ldp-inc/section-introduction.twig' %}
+			{% include 'ldp-inc/section-processing.twig' %}
+			{% include 'ldp-inc/section-exporting.twig' %}
+			{% include 'ldp-inc/section-partnerships.twig' %}
+			{% include 'ldp-inc/section-trade-fair.twig' %}
+			{% include 'ldp-inc/section-about-us.twig' %}
+			{% include 'ldp-inc/section-additional-image.twig' %}
+			{% include 'ldp-inc/section-package.twig' %}
+			{% include 'ldp-inc/section-factory.twig' %}
+			{% include 'ldp-inc/section-faq.twig' %}
+		{% endblock %}
+
+		{% block footer %}
+			<footer id="footer">
+				{% include 'footer.twig' %}
+			</footer>
+			{{ function('wp_footer') }}
+		{% endblock %}
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/vissense/0.10.0/vissense.min.js" integrity="sha512-2ES1bMYVtDkWzlzuUr6EkA0WZ4Vhg/cYBCBBlr0QtKAd12X9EWO1/JwId+9AVQnX7xu684o+7BElKL9HLd/YfQ==" crossorigin="anonymous"></script>
+		<script>
+			var myVideo = document.getElementById('intro-video');
+
+			VisSense.VisMon.Builder(VisSense(myVideo, {
+				fullyvisible: 0.3,
+				hidden: 0.5
+			}))
+			.on('fullyvisible', function() {
+				myVideo.play();
+			})
+			.on('hidden', function() {
+				myVideo.pause();
+			})
+			.build()
+			.start();
+		</script>
+	</body>
+</html>

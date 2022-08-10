@@ -1,0 +1,61 @@
+svg {
+    max-width: 100%!important;
+    height: auto;
+    display: block;
+} 
+
+
+.heyo:hover {
+    fill: #7F2629;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+
+.enabled {
+    fill: #7F2629;
+    cursor: pointer;
+}
+
+    
+.description {
+    pointer-events: none;
+    position: absolute;
+    font-size: 24px;
+    text-align: center;
+    background: white;
+    padding: 22px 38px;
+    z-index: 5;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 auto;
+    color: #7F2629;
+    display: none;
+
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+
+  &.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+    
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 0;
+    height: 0;
+    border-left: 0px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid white;
+  }
+    
+}
+  
