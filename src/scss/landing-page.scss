@@ -1,9 +1,6 @@
 @font-face {
   font-family: BadNeighborhood;
-  // src: url('/wp-content/uploads/2021/01/BadNeighborhood-BadhouseLight.woff') format('woff');
-  src: url('../assets/BadNeighborhood-BadhouseLight.woff') format('woff'),
-    url('/ecoba/wp-content/themes/markdao-theme/dist/assets/assets/BadNeighborhood-BadhouseLight.woff')
-      format('woff');
+  src: url('../assets/BadNeighborhood-BadhouseLight.woff') format('woff');
 }
 
 @import './environment.scss';
@@ -214,15 +211,11 @@ br {
 .carousel-control-prev-icon {
   width: 100%;
   height: 100%;
-  // background-image: url('/wp-content/uploads/2021/02/flat-color-icons_prev.svg');
-  background-image: url('../assets/flat-color-icons_prev.svg'),
-    url('/ecoba/wp-content/themes/markdao-theme/dist/assets/assets/flat-color-icons_prev.svg');
+  background-image: url('../assets/flat-color-icons_prev.svg');
 }
 
 .carousel-control-next-icon {
   width: 100%;
   height: 100%;
-  // background-image: url('/wp-content/uploads/2021/02/flat-color-icons_next.svg');
-  background-image: url('../assets/flat-color-icons_next.svg'),
-    url('/ecoba/wp-content/themes/markdao-theme/dist/assets/assets/flat-color-icons_next.svg');
+  background-image: url('../assets/flat-color-icons_next.svg');
 }
