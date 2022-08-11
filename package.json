@@ -50,7 +50,7 @@
   "scripts": {
     "dev": "webpack -w",
     "build": "webpack",
-    "build-production": "webpack -p",
+    "build-production": "webpack --mode production",
     "start:dev": "webpack serve",
     "watch": "webpack --watch"
   }
